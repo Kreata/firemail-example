@@ -1,4 +1,4 @@
-require(["../firemail"], function(firemail) {
+require(["./lib/firemail/lib/firemail"], function(firemail) {
 
     window.sendMail = function(){
 
@@ -57,7 +57,7 @@ require(["../firemail"], function(firemail) {
                 }];
 
                 // Send mail
-                firemail.sendmail(mail, callback);
+                firemail(mail, callback);
             };
 
             // start loading file
@@ -65,7 +65,7 @@ require(["../firemail"], function(firemail) {
         }else{
 
             // Send mail
-            firemail.sendmail(mail, callback);
+            firemail(mail, callback);
         }
     };
 

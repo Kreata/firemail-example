@@ -2,7 +2,7 @@
     "version": "1",
     "name": "Firemail Test App",
     "type" : "privileged",
-    "launch_path": "/example/app.html",
+    "launch_path": "/app.html",
     "description": "TCP test app",
     "developer": {
         "name": "Andris Reinman",

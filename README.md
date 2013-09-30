@@ -1,10 +1,14 @@
 # Firemail Example App
 
+Example application for sending e-mails from FirefoxOS. Also includes unit test runner for [firemail](http://github.com/andris9/firemail) module (tests need to be run from FirefoxOS as socket support is not available in regular Firefox).
+
+![firemail](http://tahvel.info/firemail2.png)
+
 ## Usage
 
 **Step 1**
 
-Install firemail app with volo
+Install firemail application with volo
 
 ```bash
 git clone git@github.com:andris9/firemail.git
