@@ -1,6 +1,6 @@
 # Firemail Example App
 
-Example application for sending e-mails from FirefoxOS. Also includes unit test runner for [firemail](http://github.com/andris9/firemail) module (tests need to be run from FirefoxOS as socket support is not available in regular Firefox).
+Example application for sending e-mails from FirefoxOS. Also includes unit test runner for [firemail](http://github.com/Kreata/firemail) module (tests need to be run from FirefoxOS as socket support is not available in regular Firefox).
 
 ![firemail](http://tahvel.info/firemail2.png)
 
