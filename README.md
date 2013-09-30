@@ -11,8 +11,8 @@ Example application for sending e-mails from FirefoxOS. Also includes unit test 
 Install firemail application with volo
 
 ```bash
-git clone git@github.com:andris9/firemail.git
-cd firemail
+git clone git@github.com:Kreata/firemail-example.git
+cd firemail-example
 volo install
 ```
 
