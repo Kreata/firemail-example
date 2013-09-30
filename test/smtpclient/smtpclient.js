@@ -1,13 +1,13 @@
 
-test("Create smtpClient object", function(){
-    var client = smtpClient();
-    ok(true, client instanceof smtpClient);
+test("Create smtpclient object", function(){
+    var client = smtpclient();
+    ok(true, client instanceof smtpclient);
 });
 
 asyncTest("Connect to and disconnect from a testserver", function(){
     expect(2);
 
-    var client = smtpClient("localhost", 1025);
+    var client = smtpclient("localhost", 1025);
     client.connect();
 
     client.onidle = function(){
@@ -28,7 +28,7 @@ asyncTest("Connect to and disconnect from a testserver", function(){
 asyncTest("Disconnect with QUIT", function(){
     expect(2);
 
-    var client = smtpClient("localhost", 1025);
+    var client = smtpclient("localhost", 1025);
     client.connect();
 
     client.onidle = function(){
@@ -49,7 +49,7 @@ asyncTest("Disconnect with QUIT", function(){
 asyncTest("Authenticate with default method", function(){
     expect(2);
 
-    var client = smtpClient("localhost", 1025, {
+    var client = smtpclient("localhost", 1025, {
         auth: {
             user: "testuser",
             pass: "testpass"
@@ -76,7 +76,7 @@ asyncTest("Authenticate with default method", function(){
 asyncTest("Authenticate using PLAIN", function(){
     expect(2);
 
-    var client = smtpClient("localhost", 1025, {
+    var client = smtpclient("localhost", 1025, {
         auth: {
             user: "testuser",
             pass: "testpass"
@@ -104,7 +104,7 @@ asyncTest("Authenticate using PLAIN", function(){
 asyncTest("Authenticate using LOGIN", function(){
     expect(2);
 
-    var client = smtpClient("localhost", 1025, {
+    var client = smtpclient("localhost", 1025, {
         auth: {
             user: "testuser",
             pass: "testpass"
@@ -132,7 +132,7 @@ asyncTest("Authenticate using LOGIN", function(){
 asyncTest("Authenticate with invalid data", function(){
     expect(2);
 
-    var client = smtpClient("localhost", 1025, {
+    var client = smtpclient("localhost", 1025, {
         auth: {
             user: "testuser1",
             pass: "testpass1"
@@ -160,7 +160,7 @@ asyncTest("Authenticate with invalid data", function(){
 asyncTest("MAIL FROM fails", function(){
     expect(3);
 
-    var client = smtpClient("localhost", 1025);
+    var client = smtpclient("localhost", 1025);
 
     client.connect();
 
@@ -189,7 +189,7 @@ asyncTest("MAIL FROM fails", function(){
 asyncTest("RCPT TO: fails (no recipients)", function(){
     expect(3);
 
-    var client = smtpClient("localhost", 1025);
+    var client = smtpclient("localhost", 1025);
 
     client.connect();
 
@@ -218,7 +218,7 @@ asyncTest("RCPT TO: fails (no recipients)", function(){
 asyncTest("RCPT TO: fails (invalid recipient)", function(){
     expect(3);
 
-    var client = smtpClient("localhost", 1025);
+    var client = smtpclient("localhost", 1025);
 
     client.connect();
 
@@ -247,7 +247,7 @@ asyncTest("RCPT TO: fails (invalid recipient)", function(){
 asyncTest("RCPT TO: success", function(){
     expect(3);
 
-    var client = smtpClient("localhost", 1025);
+    var client = smtpclient("localhost", 1025);
 
     client.connect();
 
@@ -281,7 +281,7 @@ asyncTest("RCPT TO: success", function(){
 asyncTest("RCPT TO: success with some failures", function(){
     expect(3);
 
-    var client = smtpClient("localhost", 1025);
+    var client = smtpclient("localhost", 1025);
 
     client.connect();
 
@@ -315,7 +315,7 @@ asyncTest("RCPT TO: success with some failures", function(){
 asyncTest("DATA: success", function(){
     expect(4);
 
-    var client = smtpClient("localhost", 1025);
+    var client = smtpclient("localhost", 1025);
 
     client.connect();
 
@@ -359,7 +359,7 @@ asyncTest("DATA: success", function(){
 asyncTest("DATA: success with dots", function(){
     expect(4);
 
-    var client = smtpClient("localhost", 1025);
+    var client = smtpclient("localhost", 1025);
 
     client.connect();
 
@@ -403,7 +403,7 @@ asyncTest("DATA: success with dots", function(){
 asyncTest("Idle after sending message", function(){
     expect(5);
 
-    var client = smtpClient("localhost", 1025);
+    var client = smtpclient("localhost", 1025);
 
     client.connect();
 
@@ -452,7 +452,7 @@ asyncTest("Connect to and disconnect from a secure testserver", function(){
     expect(2);
 
     // Self signed certificates are not supported, so we need a trusted secure server
-    var client = smtpClient("smtp.gmail.com", 465, {useSSL: true});
+    var client = smtpclient("smtp.gmail.com", 465, {useSSL: true});
     client.connect();
 
     client.onidle = function(){
