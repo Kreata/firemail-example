@@ -1,0 +1,18 @@
+{
+    "version": "1",
+    "name": "Firemail Test App",
+    "type" : "privileged",
+    "launch_path": "/example/app.html",
+    "description": "TCP test app",
+    "developer": {
+        "name": "Andris Reinman",
+        "url": "http://www.andrisreinman.com"
+    },
+    "installs_allowed_from": ["*"],
+    "default_locale": "en",
+    "permissions": {
+        "tcp-socket": {
+            "description" : "Needed to connect to the SMTP server"
+        }
+    }
+}

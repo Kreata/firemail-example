@@ -1,0 +1,9 @@
+{
+  "main": "firemail",
+  "volo": {
+    "baseDir": "lib",
+    "dependencies": {
+      "firemail": "github:andris9/firemail"
+    }
+  }
+}
